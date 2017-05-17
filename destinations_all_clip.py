@@ -22,7 +22,7 @@ for year in years:
     count = 0     # Start a counter to name output points
     for state in states: # Loop through individual features of poly_25_buffer"
         name = state_name.loc[count, 'STATE_NAME']
-        des_schools = os.path.join(outws, 'destination_'+str(year)+'_'+str(name))  # Assemble the output point name and path
+        des_schools = os.path.join(outws, 'destination_'+str(year)+'_'+str(state.STATE_NAME))  # Assemble the output point name and path
         arcpy.Clip_analysis(school_points, state.Shape, des_schools)
         count = count + 1
 
